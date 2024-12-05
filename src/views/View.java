@@ -11,13 +11,13 @@ public class View {
     }
 
     public int showMenu() {
-        System.out.println("Menu");
-        System.out.println("1. Ingresar Personas");
-        System.out.println("2. Ordenar Personas");
-        System.out.println("3. Añadir Persona");
-        System.out.println("4. Buscar Persona");
-        System.out.println("100. Salir");
-        return inputInt("Seleccione una opción");
+        System.out.println("-----------Menu------------");
+        System.out.println("1. --- Ingresar Personas. --- ");
+        System.out.println("2. ---  Ordenar Personas. --- ");
+        System.out.println("3. ---   Añadir Persona.  --- ");
+        System.out.println("4. ---   Buscar Persona.  --- ");
+        System.out.println("100. ---       Salir.       ---");
+        return inputInt("  --- Seleccione una opcion ---");
     }
 
     public int inputInt(String message) {
@@ -27,7 +27,7 @@ public class View {
                 return scanner.nextInt();
             } catch (Exception e) {
                 scanner.nextLine();
-                System.out.println("Entrada inválida. Intente de nuevo.");
+                System.out.println("--- Entrada no valida. Intente de nuevo. ---");
             }
         }
     }
@@ -39,12 +39,12 @@ public class View {
     }
 
     public String inputName() {
-        System.out.print("Ingrese el nombre: ");
+        System.out.print("--- Ingrese el nombre:");
         return scanner.next();
     }
 
     public int inputAge() {
-        return inputInt("Ingrese la edad");
+        return inputInt("--- Ingrese la edad: ");
     }
 
     public void showMessage(String message) {
@@ -52,15 +52,15 @@ public class View {
     }
 
     public int selectSortingMethod() {
-        System.out.println("-----------Ingrese la condición para ordenar------------");
-        System.out.println("1. Por nombre");
-        System.out.println("2. Por edad");
-        return inputInt("Ingrese una opción");
+        System.out.println("-----------Ingrese la condicion para ordenar------------");
+        System.out.println("1. --- Por nombre ---");
+        System.out.println("2. --- Por edad ---");
+        return inputInt("--- Ingrese una opcion ---");
     }
 
     public void displayPersons(Person[] persons) {
         if (persons == null || persons.length == 0) {
-            System.out.println("No hay personas para mostrar.");
+            System.out.println("--- No hay personas para mostrar. ---");
         } else {
             for (Person person : persons) {
                 System.out.println(person.getName() + " - " + person.getAge());
@@ -70,9 +70,9 @@ public class View {
 
     public void displaySearchResult(Person person) {
         if (person != null) {
-            System.out.println("Persona encontrada: " + person.getName() + " - " + person.getAge());
+            System.out.println("--- Persona encontrada: " + person.getName() + " - " + person.getAge());
         } else {
-            System.out.println("Persona no encontrada.");
+            System.out.println("--- Persona no encontrada. ");
         }
     }
 }
